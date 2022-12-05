@@ -1,6 +1,6 @@
 import moment from "moment";
 
-export default const dateConverter = (dateStr, preFormat, latFormat) => {
+export default function dateConverter(dateStr, preFormat, latFormat) {
   let preDate = moment(dateStr, preFormat, true);
   let latDate = moment(dateStr, latFormat, true);
   // if Invaild Format.
@@ -13,7 +13,7 @@ export default const dateConverter = (dateStr, preFormat, latFormat) => {
     let newDate = moment(dateStr, preFormat);
     return moment(newDate).format(latFormat);
   }
-};
+}
 
 // Method Example.
 // let dateStr = "24/Apr/2020";

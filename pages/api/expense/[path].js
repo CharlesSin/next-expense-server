@@ -13,10 +13,10 @@ export default async (req, res) => {
       const { collection, data } = req.body;
       createNewData(collection, data)
         .then((msg) => {
-          res.status(200).json({ msg });
+          return res.status(200).json({ msg });
         })
         .catch((error) => {
-          res.status(403).json({ error });
+          return res.status(403).json({ error });
         });
     }
     if (path === "update") {
@@ -26,10 +26,10 @@ export default async (req, res) => {
       const { collection, id, data } = req.body;
       updateAccountData(collection, id, data)
         .then((msg) => {
-          res.status(200).json({ msg });
+          return res.status(200).json({ msg });
         })
         .catch((err) => {
-          res.status(403).json({ err });
+          return res.status(403).json({ err });
         });
     }
     if (path === "delete") {
@@ -37,10 +37,10 @@ export default async (req, res) => {
       const { collection, id } = req.body;
       removeAccountData(collection, id)
         .then((msg) => {
-          res.status(200).json({ msg });
+          return res.status(200).json({ msg });
         })
         .catch((err) => {
-          res.status(403).json({ err });
+          return res.status(403).json({ err });
         });
     }
   }

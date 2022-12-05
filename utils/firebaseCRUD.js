@@ -2,7 +2,7 @@ import moment from "moment";
 import momenttz from "moment-timezone";
 
 import { fireConfig_adoptpet } from "../config/firebase.config";
-import { dateConverter } from "./dateConverter";
+import dateConverter from "./dateConverter";
 import { timestampConverter } from "./timestampConverter";
 
 const firestoreDb = fireConfig_adoptpet.firestore();
